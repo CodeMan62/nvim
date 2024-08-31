@@ -1,0 +1,3 @@
+
+require("theman")
+print("Hello")

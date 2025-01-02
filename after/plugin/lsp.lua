@@ -11,7 +11,7 @@
   require('mason-lspconfig').setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
-    ensure_installed = {'tsserver', 'rust_analyzer','eslint'},
+    ensure_installed = {'rust_analyzer','eslint'},
     handlers = {
       function(server_name)
         require('lspconfig')[server_name].setup({})

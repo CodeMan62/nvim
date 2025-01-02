@@ -30,3 +30,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.keymap.set('i', '{', '{}<LEFT>', { noremap = true })
+vim.keymap.set('i', '(', '()<LEFT>', { noremap = true })
+vim.keymap.set('i', '[', '[]<LEFT>', { noremap = true })
+vim.keymap.set('i', '"', '""<LEFT>', { noremap = true })
+vim.keymap.set('i', "'", "''<LEFT>", { noremap = true })

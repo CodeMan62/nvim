@@ -50,4 +50,15 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},           -- Snippet completions
         }
     }
+    use {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        requires = {
+            { "github/copilot.vim" },
+            { "nvim-lua/plenary.nvim", branch = "master" },
+        },
+        build = "make tiktoken",
+        opts = {
+            -- See Configuration section for options
+        },
+    }
 end)

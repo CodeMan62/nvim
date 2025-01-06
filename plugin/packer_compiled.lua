@@ -89,6 +89,12 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
+  ["base16-gruvbox-dark-hard"] = {
+    config = { "\27LJ\2\nH\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0)colorscheme base16-gruvbox-dark-hard\bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/codeman/.local/share/nvim/site/pack/packer/start/base16-gruvbox-dark-hard",
+    url = "https://github.com/wincent/base16-nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -115,15 +121,16 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/horizon",
     url = "https://github.com/lunarvim/horizon.nvim"
   },
+  ["lightline.vim"] = {
+    config = { "\27LJ\2\nm\0\1\4\0\b\0\0166\1\0\0009\1\1\0019\1\2\1'\3\3\0B\1\2\2\a\1\4\0X\1\3€'\1\5\0L\1\2\0X\1\5€6\1\0\0009\1\1\0019\1\6\1'\3\a\0D\1\2\0K\0\1\0\6%\vgetreg\14[No Name]\5\b%:t\vexpand\afn\bvim»\4\1\0\5\0\22\0#6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\3\0005\1\r\0005\2\a\0004\3\3\0005\4\5\0>\4\1\0035\4\6\0>\4\2\3=\3\b\0024\3\4\0005\4\t\0>\4\1\0035\4\n\0>\4\2\0035\4\v\0>\4\3\3=\3\f\2=\2\14\0015\2\15\0=\2\16\1=\1\4\0003\0\17\0007\0\18\0006\0\0\0009\0\19\0009\0\20\0'\2\21\0+\3\2\0B\0\3\1K\0\1\0—\1                function! g:LightlineFilename()\n                return v:lua.LightlineFilenameInLua()\n                endfunction\n                \14nvim_exec\bapi\27LightlineFilenameInLua\0\23component_function\1\0\1\rfilename\22LightlineFilename\vactive\1\0\2\23component_function\0\vactive\0\nright\1\3\0\0\17fileencoding\rfiletype\1\2\0\0\fpercent\1\2\0\0\rlineinfo\tleft\1\0\2\nright\0\tleft\0\1\4\0\0\rreadonly\rfilename\rmodified\1\3\0\0\tmode\npaste\14lightline\6g\rshowmode\6o\bvim\0" },
+    loaded = true,
+    path = "/home/codeman/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/codeman/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -150,12 +157,6 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/codeman/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -176,6 +177,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/codeman/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["supermaven-nvim"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0" },
+    loaded = true,
+    path = "/home/codeman/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
+    url = "https://github.com/supermaven-inc/supermaven-nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -200,14 +207,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
+-- Config for: base16-gruvbox-dark-hard
+time([[Config for base16-gruvbox-dark-hard]], true)
+try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0)colorscheme base16-gruvbox-dark-hard\bcmd\bvim\0", "config", "base16-gruvbox-dark-hard")
+time([[Config for base16-gruvbox-dark-hard]], false)
+-- Config for: lightline.vim
+time([[Config for lightline.vim]], true)
+try_loadstring("\27LJ\2\nm\0\1\4\0\b\0\0166\1\0\0009\1\1\0019\1\2\1'\3\3\0B\1\2\2\a\1\4\0X\1\3€'\1\5\0L\1\2\0X\1\5€6\1\0\0009\1\1\0019\1\6\1'\3\a\0D\1\2\0K\0\1\0\6%\vgetreg\14[No Name]\5\b%:t\vexpand\afn\bvim»\4\1\0\5\0\22\0#6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\3\0005\1\r\0005\2\a\0004\3\3\0005\4\5\0>\4\1\0035\4\6\0>\4\2\3=\3\b\0024\3\4\0005\4\t\0>\4\1\0035\4\n\0>\4\2\0035\4\v\0>\4\3\3=\3\f\2=\2\14\0015\2\15\0=\2\16\1=\1\4\0003\0\17\0007\0\18\0006\0\0\0009\0\19\0009\0\20\0'\2\21\0+\3\2\0B\0\3\1K\0\1\0—\1                function! g:LightlineFilename()\n                return v:lua.LightlineFilenameInLua()\n                endfunction\n                \14nvim_exec\bapi\27LightlineFilenameInLua\0\23component_function\1\0\1\rfilename\22LightlineFilename\vactive\1\0\2\23component_function\0\vactive\0\nright\1\3\0\0\17fileencoding\rfiletype\1\2\0\0\fpercent\1\2\0\0\rlineinfo\tleft\1\0\2\nright\0\tleft\0\1\4\0\0\rreadonly\rfilename\rmodified\1\3\0\0\tmode\npaste\14lightline\6g\rshowmode\6o\bvim\0", "config", "lightline.vim")
+time([[Config for lightline.vim]], false)
 -- Config for: horizon
 time([[Config for horizon]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme horizon\bcmd\bvim\0", "config", "horizon")
 time([[Config for horizon]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
+-- Config for: supermaven-nvim
+time([[Config for supermaven-nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+time([[Config for supermaven-nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

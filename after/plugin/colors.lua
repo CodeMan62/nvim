@@ -3,7 +3,7 @@ function ColorMyPencils(color)
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "dark" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "black" })
 end
 
 -- Create theme picker function with Telescope

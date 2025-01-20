@@ -15,6 +15,21 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     })
     use ({
+        'zenbones-theme/zenbones.nvim',
+        as = 'zenbones',
+        config = function()
+            vim.cmd('colorscheme zenbones')
+        end
+    })
+    use({
+        "ramojus/mellifluous.nvim",
+        as = 'mellifluous',
+        config = function()
+            require("mellifluous").setup({}) -- optional, see configuration section.
+            vim.cmd("colorscheme mellifluous")
+        end,
+    })
+    use ({
         'wincent/base16-nvim',
         as = 'base16-gruvbox-dark-hard',
         config = function()

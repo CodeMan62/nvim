@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     use 'wakatime/vim-wakatime'
     use 'm4xshen/autoclose.nvim'
     use 'echasnovski/mini.nvim'
+    use 'aliqyan-21/darkvoid.nvim'
     use ({
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',

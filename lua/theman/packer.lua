@@ -1,6 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -8,27 +5,11 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'wakatime/vim-wakatime'
     use 'm4xshen/autoclose.nvim'
-    use 'echasnovski/mini.nvim'
     use 'aliqyan-21/darkvoid.nvim'
     use ({
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
-    })
-    use ({
-        'zenbones-theme/zenbones.nvim',
-        as = 'zenbones',
-        config = function()
-            vim.cmd('colorscheme zenbones')
-        end
-    })
-    use({
-        "ramojus/mellifluous.nvim",
-        as = 'mellifluous',
-        config = function()
-            require("mellifluous").setup({}) -- optional, see configuration section.
-            vim.cmd("colorscheme mellifluous")
-        end,
     })
     use ({
         'wincent/base16-nvim',

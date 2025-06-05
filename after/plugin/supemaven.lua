@@ -1,3 +1,0 @@
-
-require("supermaven-nvim").setup {
-}

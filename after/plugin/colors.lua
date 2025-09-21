@@ -6,31 +6,6 @@ function ColorMyPencils(color)
 	--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
--- Create theme picker function with Telescope
-function ThemePicker()
-    local themes = {
-        "horizon",
-        "rose-pine"
-    }
-
-    require("telescope.builtin").select_default({
-        prompt_title = "Color Schemes",
-        results_title = "Color Schemes",
-        prompt_prefix = "🎨 ",
-        results = themes,
-        attach_mappings = function(_, map)
-            map("i", "<CR>", function(prompt_bufnr)
-                local selection = require("telescope.actions.state").get_selected_entry(prompt_bufnr)
-                require("telescope.actions").close(prompt_bufnr)
-                ColorMyPencils(selection[1])
-            end)
-            return true
-        end
-    })
-end
-
--- Set up keybinding for theme picker
-vim.keymap.set("n", "<leader>tp", ThemePicker, { noremap = true, silent = true })
 
 local function create_float_term()
     -- Create a new terminal buffer

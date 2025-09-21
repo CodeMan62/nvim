@@ -26,6 +26,13 @@ return require('packer').startup(function(use)
         end
     })
     use({
+        'blazkowolf/gruber-darker.nvim',
+        as = 'gruber-darker',
+        config = function()
+            vim.cmd('colorscheme gruber-darker')
+        end
+    })
+    use({
         'lunarvim/horizon.nvim',
         as = 'horizon',
         config = function()
@@ -81,6 +88,14 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    -- lazy git
+    use({
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',  -- Ensure you use the correct branch or version

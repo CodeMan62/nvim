@@ -132,15 +132,15 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
-  ["mason-lspconfig.nvim"] = {
+  ["mason-registry"] = {
     loaded = true,
-    path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+    path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/mason-registry",
+    url = "https://github.com/mason-org/mason-registry"
   },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
+    url = "https://github.com/mason-org/mason.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -198,10 +198,27 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["visimatch.nvim"] = {
+    loaded = true,
+    path = "/home/codeman/.local/share/dimitry/site/pack/packer/start/visimatch.nvim",
+    url = "https://github.com/wurli/visimatch.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: supermaven-nvim
+time([[Config for supermaven-nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+time([[Config for supermaven-nvim]], false)
+-- Config for: base16-gruvbox-dark-hard
+time([[Config for base16-gruvbox-dark-hard]], true)
+try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0)colorscheme base16-gruvbox-dark-hard\bcmd\bvim\0", "config", "base16-gruvbox-dark-hard")
+time([[Config for base16-gruvbox-dark-hard]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
 -- Config for: horizon
 time([[Config for horizon]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme horizon\bcmd\bvim\0", "config", "horizon")
@@ -210,18 +227,6 @@ time([[Config for horizon]], false)
 time([[Config for gruber-darker]], true)
 try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\30colorscheme gruber-darker\bcmd\bvim\0", "config", "gruber-darker")
 time([[Config for gruber-darker]], false)
--- Config for: base16-gruvbox-dark-hard
-time([[Config for base16-gruvbox-dark-hard]], true)
-try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0)colorscheme base16-gruvbox-dark-hard\bcmd\bvim\0", "config", "base16-gruvbox-dark-hard")
-time([[Config for base16-gruvbox-dark-hard]], false)
--- Config for: supermaven-nvim
-time([[Config for supermaven-nvim]], true)
-try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
-time([[Config for supermaven-nvim]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

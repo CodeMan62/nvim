@@ -100,12 +100,15 @@ return require('packer').startup(function(use)
         branch = 'v3.x',  -- Ensure you use the correct branch or version
         requires = {
             {'neovim/nvim-lspconfig'},              -- LSP Support
-            {'williamboman/mason.nvim'},            -- LSP Installer
-            {'williamboman/mason-lspconfig.nvim'},  -- LSP Configuration
+            {'mason-org/mason.nvim'},               -- LSP Manager
+            {'mason-org/mason-registry'},               -- LSP registry
             {'hrsh7th/nvim-cmp'},                   -- Autocompletion
             {'hrsh7th/cmp-nvim-lsp'},               -- LSP Completion
             {'L3MON4D3/LuaSnip'},                   -- Snippets
             {'saadparwaiz1/cmp_luasnip'},           -- Snippet completions
         }
     }
+    -- some experimental plugins
+    use {'wurli/visimatch.nvim'}
+    use {'kevinhwang91/nvim-hlslens'}
 end)

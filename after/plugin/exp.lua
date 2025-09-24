@@ -2,5 +2,6 @@
 require('visimatch').setup()
 -- hlslens
 require('hlslens').setup()
-require('hlslens').start()
+-- smear cursor
+require('smear_cursor').setup()
 

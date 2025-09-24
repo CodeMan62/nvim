@@ -132,4 +132,7 @@ return require('packer').startup(function(use)
             require('avante').setup()
         end
     }
+
+    -- smear cursor 😁
+    use {'sphamba/smear-cursor.nvim'}
 end)

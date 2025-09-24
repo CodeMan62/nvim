@@ -111,4 +111,25 @@ return require('packer').startup(function(use)
     -- some experimental plugins
     use {'wurli/visimatch.nvim'}
     use {'kevinhwang91/nvim-hlslens'}
+
+    -- Required plugins
+    use 'MunifTanjim/nui.nvim'
+    use 'MeanderingProgrammer/render-markdown.nvim'
+
+    -- Optional dependencies
+    use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
+    use 'HakonHarnes/img-clip.nvim'
+    use 'zbirenbaum/copilot.lua'
+    use 'stevearc/dressing.nvim' -- for enhanced input UI
+    use 'folke/snacks.nvim' -- for modern input UI
+
+    -- Avante.nvim with build process
+    use {
+        'yetone/avante.nvim',
+        branch = 'main',
+        run = 'make',
+        config = function()
+            require('avante').setup()
+        end
+    }
 end)

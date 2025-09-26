@@ -101,6 +101,7 @@ return require('packer').startup(function(use)
         requires = {
             {'neovim/nvim-lspconfig'},              -- LSP Support
             {'mason-org/mason.nvim'},               -- LSP Manager
+            {'williamboman/mason-lspconfig.nvim'},  -- LSP Configuration
             {'mason-org/mason-registry'},               -- LSP registry
             {'hrsh7th/nvim-cmp'},                   -- Autocompletion
             {'hrsh7th/cmp-nvim-lsp'},               -- LSP Completion
@@ -134,5 +135,5 @@ return require('packer').startup(function(use)
     }
 
     -- smear cursor 😁
-    use {'sphamba/smear-cursor.nvim'}
+    --use {'sphamba/smear-cursor.nvim'}
 end)

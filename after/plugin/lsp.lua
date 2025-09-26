@@ -1,14 +1,19 @@
-require("mason").setup({
+local lsp_zero = require('lsp-zero')
 
-    -- UI customizations
-    ui = {
-        border = "rounded", -- Use rounded borders for the Mason window
-        icons = {
-            package_installed = "✅",
-            package_pending = "⏳",
-            package_uninstalled = "❌"
-        }
+lsp_zero.on_attach(function(client, bufnr)
+    -- see :help lsp-zero-keybindings
+    -- to learn the available actions
+    lsp_zero.default_keymaps({buffer = bufnr})
+end)
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    -- Replace the language servers listed here
+    -- with the ones you want to install
+    ensure_installed = {'rust_analyzer','eslint'},
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
     },
-
 })
-

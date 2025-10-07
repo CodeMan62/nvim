@@ -10,18 +10,23 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     })
-    use ({
-        'wincent/base16-nvim',
-        as = 'base16-gruvbox-dark-hard',
-        config = function()
-            vim.cmd('colorscheme base16-gruvbox-dark-hard')
-        end
-    })
+    --use ({
+    --    'wincent/base16-nvim',
+    --    as = 'base16-gruvbox-dark-hard',
+    --    config = function()
+    --        vim.cmd('colorscheme base16-gruvbox-dark-hard')
+    --    end
+    --})
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            require('rose-pine').setup({
+                disable_background = true,
+                styles = {
+                    italics = false,
+                },
+            })
         end
     })
     use({
@@ -109,9 +114,6 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},           -- Snippet completions
         }
     }
-    -- some experimental plugins
-    use {'wurli/visimatch.nvim'}
-    use {'kevinhwang91/nvim-hlslens'}
 
     -- Required plugins
     use 'MunifTanjim/nui.nvim'

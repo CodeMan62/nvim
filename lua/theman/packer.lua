@@ -43,11 +43,8 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme horizon')
         end
     })
-    use ({
-        "supermaven-inc/supermaven-nvim",
-        config = function()
-            require("supermaven-nvim").setup({})
-        end,
+    use({
+        'erikbackman/brightburn.vim',
     })
 
     --use {

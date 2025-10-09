@@ -1,5 +1,5 @@
-
 require("theman.remap")
+
 require("theman.set")
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})

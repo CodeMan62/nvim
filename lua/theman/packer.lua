@@ -123,16 +123,4 @@ return require('packer').startup(function(use)
     use 'stevearc/dressing.nvim' -- for enhanced input UI
     use 'folke/snacks.nvim' -- for modern input UI
 
-    -- Avante.nvim with build process
-    use {
-        'yetone/avante.nvim',
-        branch = 'main',
-        run = 'make',
-        config = function()
-            require('avante').setup()
-        end
-    }
-
-    -- smear cursor 😁
-    --use {'sphamba/smear-cursor.nvim'}
 end)

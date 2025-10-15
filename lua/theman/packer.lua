@@ -47,43 +47,43 @@ return require('packer').startup(function(use)
         'erikbackman/brightburn.vim',
     })
 
-    --use {
-    --    'itchyny/lightline.vim',
-    --    config = function()
-    --        vim.o.showmode = false
-    --        vim.g.lightline = {
-    --            active = {
-    --                left = {
-    --                    { 'mode', 'paste' },
-    --                    { 'readonly', 'filename', 'modified' }
-    --                },
-    --                right = {
-    --                    { 'lineinfo' },
-    --                    { 'percent' },
-    --                    { 'fileencoding', 'filetype' }
-    --                },
-    --            },
-    --            component_function = {
-    --                filename = 'LightlineFilename'
-    --            },
-    --        }
-    --        function LightlineFilenameInLua(opts)
-    --            if vim.fn.expand('%:t') == '' then
-    --                return '[No Name]'
-    --            else
-    --                return vim.fn.getreg('%')
-    --            end
-    --        end
-    --        vim.api.nvim_exec(
-    --            [[
-    --            function! g:LightlineFilename()
-    --            return v:lua.LightlineFilenameInLua()
-    --            endfunction
-    --            ]],
-    --            true
-    --        )
-    --    end
-    --}
+    use {
+        'itchyny/lightline.vim',
+        config = function()
+            vim.o.showmode = false
+            vim.g.lightline = {
+                active = {
+                    left = {
+                        { 'mode', 'paste' },
+                        { 'readonly', 'filename', 'modified' }
+                    },
+                    right = {
+                        { 'lineinfo' },
+                        { 'percent' },
+                        { 'fileencoding', 'filetype' }
+                    },
+                },
+                component_function = {
+                    filename = 'LightlineFilename'
+                },
+            }
+            function LightlineFilenameInLua(opts)
+                if vim.fn.expand('%:t') == '' then
+                    return '[No Name]'
+                else
+                    return vim.fn.getreg('%')
+                end
+            end
+            vim.api.nvim_exec(
+                [[
+                function! g:LightlineFilename()
+                return v:lua.LightlineFilenameInLua()
+                endfunction
+                ]],
+                true
+            )
+        end
+    }
     use ('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')

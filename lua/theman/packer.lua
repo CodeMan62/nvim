@@ -10,13 +10,13 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     })
-    --use ({
-    --    'wincent/base16-nvim',
-    --    as = 'base16-nvim',
-    --    config = function()
-    --        vim.cmd('colorscheme base16-nvim')
-    --    end
-    --})
+    use ({
+        'wincent/base16-nvim',
+        as = 'base16-nvim',
+        config = function()
+            vim.cmd('colorscheme base16-nvim')
+        end
+    })
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -48,6 +48,13 @@ return require('packer').startup(function(use)
     })
     use({
         'rebelot/kanagawa.nvim'
+    })
+    use({
+        'kepano/flexoki-neovim'
+    })
+    use({
+        'lifepillar/vim-solarized8',
+        branch = 'neovim',  -- Ensure you use the correct branch or version
     })
 
     --use {

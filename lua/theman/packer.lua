@@ -4,19 +4,20 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use 'm4xshen/autoclose.nvim'
+    -- UI plugins
     use 'aliqyan-21/darkvoid.nvim'
     use ({
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     })
-    use ({
-        'wincent/base16-nvim',
-        as = 'base16-nvim',
-        config = function()
-            vim.cmd('colorscheme base16-nvim')
-        end
-    })
+    --use ({
+    --    'wincent/base16-nvim',
+    --    as = 'base16-nvim',
+    --    config = function()
+    --        vim.cmd('colorscheme base16-nvim')
+    --    end
+    --})
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -47,14 +48,15 @@ return require('packer').startup(function(use)
         'erikbackman/brightburn.vim',
     })
     use({
-        'rebelot/kanagawa.nvim'
-    })
-    use({
-        'kepano/flexoki-neovim'
-    })
-    use({
         'lifepillar/vim-solarized8',
         branch = 'neovim',  -- Ensure you use the correct branch or version
+    })
+    use({
+        'bling/vim-bufferline'
+    })
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     })
 
     --use {
@@ -107,6 +109,8 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
+    -- leetcode.nvim cool
+    use 'kawre/leetcode.nvim'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',  -- Ensure you use the correct branch or version

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/codeman/.cache/mine/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/codeman/.cache/mine/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
+local package_path_str = "/home/codeman/.cache/mine/packer_hererocks/2.1.1760617492/share/lua/5.1/?.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1760617492/share/lua/5.1/?/init.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1760617492/lib/luarocks/rocks-5.1/?.lua;/home/codeman/.cache/mine/packer_hererocks/2.1.1760617492/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/codeman/.cache/mine/packer_hererocks/2.1.1760617492/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
-  ["flexoki-neovim"] = {
-    loaded = true,
-    path = "/home/codeman/.local/share/mine/site/pack/packer/start/flexoki-neovim",
-    url = "https://github.com/kepano/flexoki-neovim"
-  },
   ["gruber-darker"] = {
     config = { "\27LJ\2\n=\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\30colorscheme gruber-darker\bcmd\bvim\0" },
     loaded = true,
@@ -141,20 +136,25 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/img-clip.nvim",
     url = "https://github.com/HakonHarnes/img-clip.nvim"
   },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/home/codeman/.local/share/mine/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["leetcode.nvim"] = {
+    loaded = true,
+    path = "/home/codeman/.local/share/mine/site/pack/packer/start/leetcode.nvim",
+    url = "https://github.com/kawre/leetcode.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/codeman/.local/share/mine/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -217,7 +217,7 @@ _G.packer_plugins = {
     url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
   },
   ["rose-pine"] = {
-    config = { "\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vstyles\1\0\1\fitalics\1\1\0\2\23disable_background\2\vstyles\0\nsetup\14rose-pine\frequire\0" },
+    config = { "\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vstyles\1\0\1\fitalics\1\1\0\2\vstyles\0\23disable_background\2\nsetup\14rose-pine\frequire\0" },
     loaded = true,
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
@@ -237,6 +237,11 @@ _G.packer_plugins = {
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-bufferline"] = {
+    loaded = true,
+    path = "/home/codeman/.local/share/mine/site/pack/packer/start/vim-bufferline",
+    url = "https://github.com/bling/vim-bufferline"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/codeman/.local/share/mine/site/pack/packer/start/vim-fugitive",
@@ -250,18 +255,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: horizon
-time([[Config for horizon]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme horizon\bcmd\bvim\0", "config", "horizon")
-time([[Config for horizon]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vstyles\1\0\1\fitalics\1\1\0\2\23disable_background\2\vstyles\0\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
 -- Config for: gruber-darker
 time([[Config for gruber-darker]], true)
 try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\30colorscheme gruber-darker\bcmd\bvim\0", "config", "gruber-darker")
 time([[Config for gruber-darker]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\nu\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vstyles\1\0\1\fitalics\1\1\0\2\vstyles\0\23disable_background\2\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
+-- Config for: horizon
+time([[Config for horizon]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme horizon\bcmd\bvim\0", "config", "horizon")
+time([[Config for horizon]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -61,3 +61,6 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+-- Compile, run, and save output to output.txt
+vim.keymap.set('n', '<F8>', ':w<CR>:!g++ -std=c++17 -O2 -Wall % -o %:r && ./%:r < input.txt > output.txt<CR>', { desc = 'Compile and run' })
+vim.keymap.set('n', '<F9>', ':w<CR>:!g++ -std=c++17 -O2 -Wall % -o %:r<CR>', { desc = 'Compile only' })

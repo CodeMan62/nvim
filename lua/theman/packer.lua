@@ -51,8 +51,74 @@ return require('packer').startup(function(use)
         'lifepillar/vim-solarized8',
         branch = 'neovim',  -- Ensure you use the correct branch or version
     })
+    -- Better modern themes
     use({
-        'bling/vim-bufferline'
+        'folke/tokyonight.nvim',
+        priority = 1000,
+    })
+    use({
+        'catppuccin/nvim',
+        as = 'catppuccin',
+        priority = 1000,
+    })
+    use({
+        'rebelot/kanagawa.nvim',
+        priority = 1000,
+    })
+    use({
+        'navarasu/onedark.nvim',
+        priority = 1000,
+    })
+    use({
+        'Mofiqul/dracula.nvim',
+        priority = 1000,
+    })
+    -- More cool themes
+    use({
+        'EdenEast/nightfox.nvim',
+        priority = 1000,
+    })
+    use({
+        'ellisonleao/gruvbox.nvim',
+        priority = 1000,
+    })
+    use({
+        'sainnhe/gruvbox-material',
+        priority = 1000,
+    })
+    use({
+        'sainnhe/everforest',
+        priority = 1000,
+    })
+    use({
+        'marko-cerovac/material.nvim',
+        priority = 1000,
+    })
+    use({
+        'tanvirtin/monokai.nvim',
+        priority = 1000,
+    })
+    use({
+        'sainnhe/sonokai',
+        priority = 1000,
+    })
+    use({
+        'rmehri01/onenord.nvim',
+        priority = 1000,
+    })
+    use({
+        'olimorris/onedarkpro.nvim',
+        priority = 1000,
+    })
+    -- Theme picker
+    use({
+        'zaldih/themery.nvim',
+    })
+    -- Modern bufferline (replacing old vim-bufferline)
+    use({
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons'
     })
     use({
         'nvim-lualine/lualine.nvim',
@@ -136,5 +202,65 @@ return require('packer').startup(function(use)
     use 'zbirenbaum/copilot.lua'
     use 'stevearc/dressing.nvim' -- for enhanced input UI
     use 'folke/snacks.nvim' -- for modern input UI
+
+    -- Supermaven AI autocomplete
+    use({
+        'supermaven-inc/supermaven-nvim',
+        config = function()
+            require('supermaven-nvim').setup({
+                keymaps = {
+                    accept_suggestion = '<Tab>',
+                    clear_suggestion = '<C-]>',
+                    accept_word = '<C-l>',
+                },
+            })
+        end,
+    })
+
+    -- Avante.nvim - Modern UI components
+    use({
+        'yetone/avante.nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    })
+
+    -- Smooth scrolling for better UX
+    use({
+        'karb94/neoscroll.nvim',
+    })
+
+    -- Better autocomplete enhancements
+    use({
+        'windwp/nvim-autopairs',
+    })
+
+    -- Smooth cursor movement
+    use({
+        'gen740/SmoothCursor.nvim',
+        config = function()
+            require('smoothcursor').setup({
+                fancy = {
+                    enable = true,
+                },
+            })
+        end,
+    })
+
+    -- Better visual feedback
+    use({
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup({
+                signs = {
+                    add = { text = '+' },
+                    change = { text = '~' },
+                    delete = { text = '_' },
+                    topdelete = { text = '‾' },
+                    changedelete = { text = '~' },
+                },
+            })
+        end,
+    })
 
 end)

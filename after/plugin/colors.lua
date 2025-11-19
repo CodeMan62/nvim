@@ -1,6 +1,6 @@
 function ColorMyPencils(color)
 	--color = color or "solarized8"
-	color = color or "tokyonight"
+	color = color or "rose-pine-moon"
 	vim.cmd.colorscheme(color)
 	-- thanks jon
 	--vim.o.background = 'light'

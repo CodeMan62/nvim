@@ -137,4 +137,11 @@ return require('packer').startup(function(use)
     use 'stevearc/dressing.nvim' -- for enhanced input UI
     use 'folke/snacks.nvim' -- for modern input UI
 
+    -- supermave(we need to do work faster)
+    use {
+        "supermaven-inc/supermaven-nvim",
+        config = function()
+            require("supermaven-nvim").setup({})
+        end,
+    }
 end)

@@ -1,7 +1,12 @@
 function ColorMyPencils(color)
 	--color = color or "solarized8"
-	color = color or "rose-pine-moon"
-	vim.cmd.colorscheme(color)
+	color = color or "compline"
+	if color == "compline" then
+		local compline = require('compline.theme')
+		compline.setup()
+	else
+		vim.cmd.colorscheme(color)
+	end
 	-- thanks jon
 	--vim.o.background = 'light'
 	vim.g.solarized_visibility = "low"
@@ -16,7 +21,7 @@ function ColorMyPencils(color)
 	--	vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true })
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	vim.api.nvim_set_hl(0, "Cursor", { fg = "white", bg = "white" })
+	--vim.api.nvim_set_hl(0, "Cursor", { fg = "white", bg = "white" })
 	--vim.api.nvim_set_hl(0, "Cursor", { fg = "black", bg = "black" })
 end
 

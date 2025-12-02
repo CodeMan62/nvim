@@ -34,4 +34,3 @@ vim.opt.foldcolumn = "0"
 vim.opt.cursorline = false
 vim.opt.numberwidth = 1
 vim.opt.fillchars = { eob = " " }  -- hide ~ lines
-

@@ -1,6 +1,6 @@
 function ColorMyPencils(color)
 	--color = color or "solarized8"
-	color = color or "compline"
+	color = color or "catppuccin"
 	if color == "compline" then
 		local compline = require('compline.theme')
 		compline.setup()

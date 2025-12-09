@@ -6,6 +6,9 @@ return require('packer').startup(function(use)
     use 'm4xshen/autoclose.nvim'
     -- UI plugins
     use 'aliqyan-21/darkvoid.nvim'
+
+    -- Themes kept in a dedicated module to keep this file slim
+    require('theman.themes')(use)
     use ({
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
@@ -18,39 +21,6 @@ return require('packer').startup(function(use)
     --        vim.cmd('colorscheme base16-nvim')
     --    end
     --})
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            require('rose-pine').setup({
-                disable_background = true,
-                styles = {
-                    italics = false,
-                },
-            })
-        end
-    })
-    use({
-        'blazkowolf/gruber-darker.nvim',
-        as = 'gruber-darker',
-        config = function()
-            vim.cmd('colorscheme gruber-darker')
-        end
-    })
-    use({
-        'lunarvim/horizon.nvim',
-        as = 'horizon',
-        config = function()
-            vim.cmd('colorscheme horizon')
-        end
-    })
-    use({
-        'erikbackman/brightburn.vim',
-    })
-    use({
-        'lifepillar/vim-solarized8',
-        branch = 'neovim',  -- Ensure you use the correct branch or version
-    })
     use({
         'bling/vim-bufferline'
     })

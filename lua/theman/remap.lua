@@ -64,3 +64,8 @@ end)
 -- Compile, run, and save output to output.txt
 vim.keymap.set('n', '<F8>', ':w<CR>:!g++ -std=c++17 -O2 -Wall % -o %:r && ./%:r < input.txt > output.txt<CR>', { desc = 'Compile and run' })
 vim.keymap.set('n', '<F9>', ':w<CR>:!g++ -std=c++17 -O2 -Wall % -o %:r<CR>', { desc = 'Compile only' })
+if vim.g.neovide == true then
+  vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
+  vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+end

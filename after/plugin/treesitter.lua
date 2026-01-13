@@ -1,4 +1,11 @@
-require("nvim-treesitter.configs").setup({
+-- Safely require nvim-treesitter.configs
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+    vim.notify("nvim-treesitter.configs not found. Make sure nvim-treesitter is installed.", vim.log.levels.WARN)
+    return
+end
+
+configs.setup({
 	-- A list of parser names, or "all"
 	ensure_installed = {
 		"vimdoc", "javascript", "typescript", "c", "lua", "rust",

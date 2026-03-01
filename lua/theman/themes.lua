@@ -757,5 +757,11 @@ return function(use)
         'lifepillar/vim-solarized8',
         branch = 'neovim',
     })
+    use({
+        'folke/tokyonight.nvim',
+        config = function()
+            vim.cmd('colorscheme tokyonight-night')
+        end
+    })
 end
 

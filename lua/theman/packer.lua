@@ -10,9 +10,13 @@ return require('packer').startup(function(use)
     -- Themes kept in a dedicated module to keep this file slim
     require('theman.themes')(use)
     use ({
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        'nvim-telescope/telescope.nvim', tag = '*',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {'nvim-lua/plenary.nvim'} },
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            {'nvim-telescope/telescope-fzf-native.nvim', build= 'make'},
+        }
     })
     --use ({
     --    'wincent/base16-nvim',
@@ -105,14 +109,6 @@ return require('packer').startup(function(use)
     use 'zbirenbaum/copilot.lua'
     use 'stevearc/dressing.nvim' -- for enhanced input UI
     use 'folke/snacks.nvim' -- for modern input UI
-
-    -- supermave(we need to do work faster)
-    use {
-        "supermaven-inc/supermaven-nvim",
-        config = function()
-            require("supermaven-nvim").setup({})
-        end,
-    }
     use 'sphamba/smear-cursor.nvim'
     use 'charludo/projectmgr.nvim'
 end)

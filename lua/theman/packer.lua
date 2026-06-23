@@ -28,11 +28,6 @@ return require('packer').startup(function(use)
     use({
         'bling/vim-bufferline'
     })
-    use({
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    })
-
     --use {
     --    'itchyny/lightline.vim',
     --    config = function()

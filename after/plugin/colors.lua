@@ -1,28 +1,16 @@
 function ColorMyPencils(color)
-	color = color or "gruvbox-material"
-	--color = color or "catppuccin"
+	color = color or "catppuccin"
 	if color == "compline" then
 		local compline = require('compline.theme')
 		compline.setup()
+    elseif color == "broski" then
+        local broski = require('broski.theme')
+        broski.setup()
 	else
 		vim.cmd.colorscheme(color)
 	end
-	-- thanks jon
-	--vim.o.background = 'light'
-	vim.g.solarized_visibility = "low"
-	--	vim.cmd([[hi Normal ctermbg=NONE]])
-	--	-- Less visible window separator
-	--	vim.api.nvim_set_hl(0, "WinSeparator", { fg = 1250067 })
-	--	-- Make comments more prominent -- they are important.
-	--	local bools = vim.api.nvim_get_hl(0, { name = 'Boolean' })
-	--	vim.api.nvim_set_hl(0, 'Comment', bools)
-	--	-- Make it clearly visible which argument we're at.
-	--	local marked = vim.api.nvim_get_hl(0, { name = 'PMenu' })
-	--	vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true })
-	--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	vim.api.nvim_set_hl(0, "Cursor", { fg = "white", bg = "white" })
-	--vim.api.nvim_set_hl(0, "Cursor", { fg = "black", bg = "black" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "Cursor", { fg = "white", bg = "white" })
 end
 
 local function create_float_term()

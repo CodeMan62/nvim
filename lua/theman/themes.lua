@@ -1,7 +1,38 @@
--- Theme plugins extracted from packer.lua to keep the main file slim.
--- This module exports a function that receives the `use` helper.
-return function(use)
-    use({
+-- Colourschemes, kept in their own module to keep the main file slim.
+--
+-- These were written against packer.nvim. The `use` shim below normalises the
+-- old spec keys onto lazy.nvim's, so the colour settings themselves are
+-- unchanged. The module returns the collected specs for lua/plugins/themes.lua.
+
+local M = {}
+
+local specs = {}
+
+local function use(spec, opts)
+    if type(spec) == "string" then
+        spec = { spec }
+    end
+    spec = vim.tbl_extend("force", {}, spec, opts or {})
+
+    if spec.as then
+        spec.name = spec.as
+        spec.as = nil
+    end
+    if spec.disable ~= nil then
+        spec.enabled = not spec.disable
+        spec.disable = nil
+    end
+    if spec.requires then
+        spec.dependencies = spec.requires
+        spec.requires = nil
+    end
+    spec.tag = nil
+    spec.run = nil
+
+    specs[#specs + 1] = spec
+end
+
+use({
         "sainnhe/gruvbox-material",
         config = function()
             vim.g.gruvbox_material_transparent_background = 1
@@ -241,6 +272,7 @@ return function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
+        colorscheme = "catppuccin",
         config = function()
             require("catppuccin").setup({
                 background = {
@@ -750,18 +782,13 @@ return function(use)
     })
 
     use({
-        'erikbackman/brightburn.vim',
-    })
-
-    use({
-        'lifepillar/vim-solarized8',
-        branch = 'neovim',
-    })
-    use({
         'folke/tokyonight.nvim',
         config = function()
             vim.cmd('colorscheme tokyonight-night')
         end
     })
-end
+
+M.specs = specs
+
+return M
 

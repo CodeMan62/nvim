@@ -25,6 +25,18 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
+vim.opt.wildignore:append({
+  "*/__pycache__/*",
+  "*/.pytest_cache/*",
+  "*.pyc",
+  "*.pyo",
+  "*/.git/*",
+  "*/node_modules/*",
+})
+
+-- netrw (used by <leader>pv): hide VSCode-style excluded dirs
+vim.g.netrw_hide = 1
+vim.g.netrw_list_hide = "__pycache__\\/$,\\.pytest_cache\\/$,.*\\.pyc$,.*\\.pyo$,^\\.git$"
 
 vim.opt.updatetime = 50
 

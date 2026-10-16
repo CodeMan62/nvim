@@ -19,7 +19,15 @@ return {
     priority = 1000,
     opts = {
       input = { enabled = true },
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        exclude = {
+          "__pycache__",
+          ".pytest_cache",
+          "*.pyc",
+          "*.pyo",
+        },
+      },
       notifier = { enabled = true },
       quickmenu = { enabled = true },
     },
